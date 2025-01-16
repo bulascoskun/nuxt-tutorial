@@ -1,16 +1,10 @@
 <template>
   <div>
-    <h2>Products</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores unde
-      animi dolorem perferendis minima nostrum praesentium repellendus, eos ab
-      enim?
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime hic
-      cumque ipsum reprehenderit eligendi magni voluptates? Debitis optio error
-      quia?
-    </p>
+    <div class="grid grid-cols-4 gap-5">
+      <div v-for="p in products">
+        <NuxtLink :to="`/products/${p.id}`">{{ p.title }}</NuxtLink>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -18,6 +12,8 @@
 definePageMeta({
   layout: 'products',
 });
+
+const { data: products } = await useFetch('https://fakestoreapi.com/products');
 </script>
 
 <style lang="scss" scoped>
