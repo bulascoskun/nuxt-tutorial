@@ -6,10 +6,7 @@
   </div>
 </template>
 
-<script setup>
-const { sayHello } = useUtils('about');
-sayHello();
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 h2 {
