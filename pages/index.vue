@@ -14,7 +14,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const { sayHello } = useUtils('');
+sayHello();
+</script>
 
 <style lang="scss" scoped>
 h2 {
